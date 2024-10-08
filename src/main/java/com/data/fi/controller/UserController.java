@@ -36,7 +36,7 @@ public class UserController {
         user.setEmail(userDTO.getEmail());
         user.setPassword(userDTO.getPassword());
         user.setRole(userDTO.getRole());
-        user.setEmailConfirmed(false); // Novo usuário ainda não tem email confirmado
+        user.setEmailConfirmed(false); 
 
         User createdUser = userService.saveUser(user);
         CreateUserResposeDTO responseDTO = new CreateUserResposeDTO(

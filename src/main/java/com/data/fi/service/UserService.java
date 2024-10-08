@@ -2,6 +2,8 @@ package com.data.fi.service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -34,11 +36,26 @@ public class UserService {
     @Lazy
     private EmailService emailService;
 
+    // Expressão regular para validar o formato do e-mail
+    private static final String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+    private static final Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
+
     public User saveUser(User user) {
+        // Valida se o e-mail está em formato correto
+        if (!isValidEmail(user.getEmail())) {
+            throw new BadRequestException("Formato de e-mail inválido.");
+        }
+
+        // Verifica se o e-mail já está cadastrado
         if (userRepository.findByEmail(user.getEmail()).isPresent()) {
             throw new BadRequestException("O usuário já existe.");
         }
-        
+
+        // Verifica se a senha é válida
+        if (!isValidPassword(user.getPassword())) {
+            throw new BadRequestException("A senha deve ter no mínimo 6 caracteres.");
+        }
+
         try {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             return userRepository.save(user);
@@ -59,10 +76,19 @@ public class UserService {
         User existingUser = userRepository.findById(id)
                 .orElseThrow(() -> new BadRequestException("Usuário não encontrado."));
 
+        // Valida se o e-mail está em formato correto
+        if (!isValidEmail(userDetails.getEmail())) {
+            throw new BadRequestException("Formato de e-mail inválido.");
+        }
+
         try {
             existingUser.setEmail(userDetails.getEmail());
             
             if (userDetails.getPassword() != null && !userDetails.getPassword().isEmpty()) {
+                // Verifica se a senha é válida
+                if (!isValidPassword(userDetails.getPassword())) {
+                    throw new BadRequestException("A senha deve ter no mínimo 6 caracteres.");
+                }
                 existingUser.setPassword(passwordEncoder.encode(userDetails.getPassword()));
             }
 
@@ -115,5 +141,19 @@ public class UserService {
         } catch (Exception e) {
             throw new RuntimeException("Erro ao confirmar o token de recuperação.", e);
         }
+    }
+
+    // Método que valida se o e-mail tem um formato correto
+    private boolean isValidEmail(String email) {
+        if (email == null || email.isEmpty()) {
+            return false;
+        }
+        Matcher matcher = EMAIL_PATTERN.matcher(email);
+        return matcher.matches();
+    }
+
+    // Método que valida se a senha é forte o suficiente
+    private boolean isValidPassword(String password) {
+        return password != null && password.length() >= 6;
     }
 }
