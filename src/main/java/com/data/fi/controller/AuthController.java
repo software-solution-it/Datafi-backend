@@ -25,7 +25,7 @@ public class AuthController {
     private final UserDetailsService userDetailsService;
 
     AuthController(UserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
+        this.userDetailsService = userDetailsService; 
     }
 
     @PostMapping("/authenticate")
