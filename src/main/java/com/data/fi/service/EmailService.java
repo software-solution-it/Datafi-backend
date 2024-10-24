@@ -30,7 +30,7 @@ public class EmailService {
     public String sendRecoveryEmail(String email) {
         // Gere um token de recuperação real
         String recoveryToken = tokenService.generateToken(); // Gere um token seguro
-        String recoveryLink = "https://datafi-ten.vercel.app/recover?token=" + recoveryToken;
+        String recoveryLink = "https://yourapp.com/recover?token=" + recoveryToken;
 
         // Salvar o token e associá-lo ao usuário
         MagicLink magicLink = new MagicLink();

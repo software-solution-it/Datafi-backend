@@ -1,0 +1,11 @@
+2024-10-08 19:46:43,612 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
+2024-10-08 19:46:56,213 [Worker-8: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.data:fi:0.0.1-SNAPSHOT @ C:\Users\gusta\Videos\Projetos\Datafi-backend\target\classes\META-INF\maven\com.data\fi\pom.xml.
+2024-10-08 19:46:57,320 [Worker-8: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /fi/src/main/java
+2024-10-08 19:46:57,322 [Worker-8: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /fi/src/main/resources
+2024-10-08 19:46:57,323 [Worker-8: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /fi/src/main/resources
+2024-10-08 19:46:57,323 [Worker-8: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /fi/src/test/java
+2024-10-08 19:46:57,324 [Worker-8: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /fi/src/test/resources
+2024-10-08 19:46:57,916 [Worker-8: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 3 sec
+2024-10-08 19:46:58,665 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\gusta\Videos\Projetos\Datafi-backend\target\classes\META-INF\maven\com.data\fi\src\main\resources
+2024-10-08 19:46:58,665 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\gusta\Videos\Projetos\Datafi-backend\target\classes\META-INF\maven\com.data\fi\src\main\resources
+2024-10-08 19:46:58,670 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\gusta\Videos\Projetos\Datafi-backend\target\classes\META-INF\maven\com.data\fi\src\test\resources
