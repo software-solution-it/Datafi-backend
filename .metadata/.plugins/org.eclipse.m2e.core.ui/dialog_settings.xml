@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\gusta\Videos\Projetos\Datafi-backend"/>
 			<item value="C:\Users\gusta\Videos\Projetos\Datafi-backend\target"/>
 		</list>
 		<list key="projectNameTemplate">

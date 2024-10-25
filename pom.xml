@@ -42,7 +42,19 @@
     <groupId>io.jsonwebtoken</groupId>
     <artifactId>jjwt-api</artifactId>
     <version>0.11.5</version>
-</dependency>
+</dependency> 
+    <dependency>
+        <groupId>com.amazonaws</groupId>
+        <artifactId>aws-java-sdk-s3</artifactId>
+        <version>1.12.524</version>
+    </dependency>
+
+    <!-- Spring Cloud AWS para facilitar a configuração do AWS S3 -->
+    <dependency>
+        <groupId>io.awspring.cloud</groupId>
+        <artifactId>spring-cloud-aws-context</artifactId>
+        <version>2.4.2</version>
+    </dependency>
 <dependency>
     <groupId>io.jsonwebtoken</groupId>
     <artifactId>jjwt-impl</artifactId>
